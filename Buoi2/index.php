@@ -12,7 +12,7 @@ echo $arr1[1];
  {
      echo $arr2[$i];
  }
-
+ 
  //Mang ket hop
  $arr_multi = [
      'name' => 'trinh khac tung',
