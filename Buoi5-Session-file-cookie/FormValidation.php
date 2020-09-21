@@ -1,14 +1,5 @@
 <?php
-if (isset($_POST['submit_form'])) {
 
-	$name = $_POST['name'];
-	$phone = $_POST['phone'];
-	$email = $_POST['email'];
-	$learn = $_POST['learn'];
-	if ($name && $phone && $email && $learn) {
-		$check = 1;
-	}
-}
 
 ?>
 <!DOCTYPE html>
@@ -70,7 +61,7 @@ if (isset($_POST['submit_form'])) {
 							<input type="password" name="passw" class="form-control" id="pass" />
 						</div>
 					</div>
-					
+
 					<div class="form-row">
 						<div class="form-group col-md-12">
 							<label for="passw">Nhập lại mật khẩu <span style="color: red;" id="errorConPass">(*)</span></label>
@@ -82,6 +73,32 @@ if (isset($_POST['submit_form'])) {
 					<button type="reset" class="btn btn-danger">Xóa thông tin</button>
 				</form>
 			</div>
+
+			<?php
+			if (isset($_POST['submit_form'])) {
+
+				$name = $_POST['name'];
+				$phone = $_POST['phone'];
+				$email = $_POST['email'];
+				$learn = $_POST['learn'];
+				if ($name && $phone && $email && $learn) {
+					$check = 1;
+				}
+			}
+
+			if (isset($check)) {
+				global $name;
+				global $phone;
+				global $email;
+				global $learn;
+				$path = 'data.txt';
+				$filew = fopen($path, 'a') or die('cannot open file');
+			
+				fwrite($filew, $name . "-");
+				fwrite($filew, $phone . "-");
+				fwrite($filew, $email . "-");
+				fwrite($filew, $learn . "\n");
+			} ?>
 			<div class="col-md-6">
 				<?php
 				if (isset($check)) {
@@ -103,17 +120,12 @@ if (isset($_POST['submit_form'])) {
 								<td><?php echo $phone; ?></td>
 								<td><?php echo $email; ?></td>
 								<td><?php echo $learn; ?></td>
-
-
-
 							</tr>
 
 						</tbody>
 					</table>
+
 				<?php } ?>
-
-
-
 			</div>
 		</div>
 	</div>
