@@ -16,7 +16,7 @@
 
     <div class="container">
         <div class="row">
-        <form action="response.php" method="POST" name="form_login">
+        <form action="" method="POST" name="form_login">
             <div class="form-group">
               <label for="">Username</label>
               <input type="text" class="form-control" name="user" id="user" aria-describedby="helpId" placeholder="">
@@ -25,11 +25,43 @@
               <label for="">Password</label>
               <input type="password" class="form-control" name="pass" id="pass" placeholder="">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit_btn" class="btn btn-primary">Submit</button>
         </form>
         </div>
     </div>
 
+
+<?php 
+
+if(isset($_POST['submit_btn']))
+{
+  $file=fopen("account.txt","r") or exit("Unable to open file!");
+  $listuser = [];
+  while(!feof($file)){
+   
+    $listuser[] =  explode("*",fgets($file));;
+    
+    }
+    foreach($listuser as $value)
+    {
+      if($value[1]==$_POST['user'] && $value[2]==$_POST['pass'])
+      {
+        echo '<script> alert("Tài khoản và mật khẩu chính xác") </script>';
+        return false;
+      }
+      else
+      {
+        echo '<script> alert("Tài khoản và mật khẩu không tồn tại") </script>';
+        return false;
+      
+      }
+
+    }
+  
+}
+ 
+   
+?>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
