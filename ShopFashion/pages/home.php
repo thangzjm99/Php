@@ -10,7 +10,6 @@
             $proHot = getProductHot();
             foreach ($proHot as $hot) {
             ?>
-
                <div class="col-md-3 col-sm-6">
                   <div class="products">
                      <div class="thumbnail"><a href="details.html"><img src="images/products/<?php echo $hot['img'] ?>" alt="Product Name"></a></div>
@@ -20,7 +19,6 @@
                         <a href="index.php?page=order&id=<?php echo $hot['id'] ?>">
                            <button class="button add-cart" type="button">Add To Cart</button>
                         </a>
-
                         <button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button>
                      </div>
                   </div>
