@@ -1,27 +1,47 @@
 <?php 
 class Person
 {
-    var $name='Trinh khac tung';
-    var $age = 30;
-    var $gender = true;
-    const phone = '09888800808';
-
-    function Go($go){
-        $info='Thong tin';
-        return 'phuong tien di lam cua anh '.$this->name.' la : '.$go;
-
-    }   
+    public $name='Trinh khac tung';
+    public $age = 30;
     
-    function Work(){
-        return 'cong viec lam la : Dev,co so dien thoai : '.self::phone.',phuong tien di lam la : '.$this->Go('Oto');
+    public function setAge($age){
+       $this->age=$age;
+    }
+
+    public function getAge(){
+        echo 'Tuoi = '.$this->age;
     }
 }
 
-$info= new Person();
-echo $info->name.'<br>';
-echo $info->gender.'<br>';
-echo $info::phone.'<br>';
-echo $info->Go('Oto');
-echo '<br>';
-echo $info->Work();
+$per = new Person();
+$per->setAge(15);
+$per->getAge();
+
+// $info= new Person();
+// echo $info->name.'<br>';
+// echo $info->gender.'<br>';
+// echo $info::phone.'<br>';
+// echo $info->Go('Oto');
+// echo '<br>';
+// echo $info->Work();
+
+// class Animal{
+//     var $name ;
+//     var $height  ;
+//     var $weight;
+//     var $color;
+
+//     function setProperty($name,$height,$weight,$color){
+//         $this->name=$name;
+//         $this->height=$height;
+//         $this->weight=$weight;
+//         $this->color=$color;
+//     }
+//     function live($live)
+//     {
+//         return 'Noi song : '.$live;
+//     }
+//     function show($live){}
+
+// }
 ?>
