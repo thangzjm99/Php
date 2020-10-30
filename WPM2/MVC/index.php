@@ -70,7 +70,7 @@
 							if (isset($_GET['page'])) {
 								$page = $_GET['page'];
 							}else{
-								$page = 'trang_chu';
+								$page = 'students';
 							}
 
 							switch ($page) {
@@ -82,8 +82,8 @@
 									include 'views/edit_member.php';
 									break;
 
-									case 'trang_chu':
-										include 'controller/Students_c.php';
+									case 'students':
+										include_once 'controller/Students_c.php';
 										$student = new Student_c();
 										$student->student();
 										break;

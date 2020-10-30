@@ -21,6 +21,13 @@
            }
            return $result;
         }
+
+        public function getStudentID($id)
+        {
+            $sql = "Select * from tbl_student where id = :id";
+            $pre = $this->pdo->prepare($sql);
+            
+        }
     }
 
 
