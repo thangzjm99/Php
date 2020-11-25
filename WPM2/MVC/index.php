@@ -7,7 +7,7 @@
 		<title>Học viên IT-Plus</title>
 		<link rel="stylesheet" href="asset/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="asset/css/my_css.css">
-		
+
 
 	</head>
 	<body>
@@ -74,17 +74,9 @@
 							}
 
 							switch ($page) {
-								case 'add_member':
-									include 'views/add_member.php';
-									break;
-
-								case 'edit':
-									include 'views/edit_member.php';
-									break;
-
 									case 'students':
-										include_once 'controller/Students_c.php';
-										$student = new Student_c();
+										include_once 'controller/Studens_c.php';
+										$student = new Member_c();
 										$student->student();
 										break;
 								

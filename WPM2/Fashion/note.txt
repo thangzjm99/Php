@@ -1,0 +1,15 @@
+- Kết nối CSDL
+- Hiển thị sản phẩm ra trang chủ
+- Xử lý phần thêm sản phẩm vào giỏ hàng
+- Hiển thị sản phẩm giỏ hàng
+- Xóa sản phẩm khỏi giỏ hàng
+- Cập nhật sản phẩm giỏ hàng, số lượng, 
+- Xử lý Đặt hàng
+- Gửi mail đơn hàng, gửi SMS
+----------------------
+
+
+Admin:
+- Check order: Kiểm tra đơn hàng
+- Xem chi tiết đơn hàng
+- Cập nhật trạng thái đơn hàng
